@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nav.css">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.nav li{
+    list-style: none;
+}
+.nav{
+    background: rgb(54, 134, 255);
+    width: 100%;
+    height: 53px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+
+.nav a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+    padding: 14px 56px;
+    border-radius: 47px;
+    margin-top:4px ;
+    transition: background-color 0.3s;
+    
+}
+.nav .list{
+    margin-top: 16px;
+    
+}
+.nav a:hover{
+    background-color: #fff;
+    color: black;
+}
+#checkbtn{
+    width: 20px;
+    height: 20px;
+    
+    position: absolute;
+    top: 5px;
+    left: 11px;
+    z-index: 50 ;
+    cursor: pointer;
+    display: none;
+}
+.header{
+    width: 100%;
+    height: 40px;
+    background: rgb(54, 134, 255);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 40;
+    display: none;
+}
+@media (max-width:664px) {
+   
+.nav{
+    flex-direction: column;
+    height: 334px;
+    margin-top:30px ;
+    align-items: center;
+    transform: translateY(-400px);
+    transition: transform 1s;
+}
+.header{
+    display: block;
+}
+#checkbtn{
+    display: block;
+}
+#checkbox:checked ~ .nav{
+transform: translateY(0px);
+}
+.line{
+    background: #fff;
+    width: 25px;
+    height: 4px;
+    margin: 4px 0px;
+    border: 0px solid white;
+    border-radius: 10px;
+}
+#checkbox:checked ~ #mid{
+    opacity:0;
+}
+#checkbox:checked ~ #top{
+    transform: rotate(135deg);
+}
+
+
+
+
+
+}
+</style>
+<body>
+    <input type="checkbox" name="" id="checkbox">
+    <label for="checkbox" id="checkbtn">
+        <div class="line" id="top"></div>
+        <div class="line" id="mid"></div>
+        <div class="line" id="bottom"></div>
+    </label>
+    <div class="header"></div>
+    <div class="nav">
+        
+            <div class="list"><a href="#">Home</a></div>
+            <div class="list"><a href="#">About</a></div>
+            <div class="list"><a href="#">Gallery</a></div>
+            <div class="list"><a href="#">Reach us</a></div>
+        
+    </div>    
+</body>
+</html>
